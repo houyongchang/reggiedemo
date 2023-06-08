@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class ReggieApplication {
     public static void main(String[] args) {
         log.info("启动成功");
-        log.info("6666");
         SpringApplication.run(ReggieApplication.class, args);
     }
 
