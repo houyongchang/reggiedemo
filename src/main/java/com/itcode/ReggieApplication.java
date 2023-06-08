@@ -18,6 +18,7 @@ public class ReggieApplication {
     public static void main(String[] args) {
         log.info("启动成功");
         log.info("6666");
+        log.info("1111");
         SpringApplication.run(ReggieApplication.class, args);
     }
 
