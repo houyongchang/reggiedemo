@@ -1,5 +1,6 @@
 package com.itcode;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +13,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //开启事务注解
 @EnableTransactionManagement
 @MapperScan("com.itcode.mapper")
+@Slf4j
 public class ReggieApplication {
-
     public static void main(String[] args) {
+        log.info("启动成功");
         SpringApplication.run(ReggieApplication.class, args);
     }
 
