@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--sql语句的定义  namespqce 标识空间 	id 此sql语句的唯一标识		resulttyoe 返回值类型-->
+<mapper namespace="com.itcode.mapper.DishMapper">
+
+
+    <update id="updateType">
+        update dish set status=#{type} where id=#{id}
+    </update>
+    <update id="updateAll">
+
+        update dish set status=#{type}
+        where id in
+        <!--collection : 封装成map集合的名称
+        item:value值
+        separator:分隔符
+        open close：替换in语法的（）
+        -->
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        ;
+
+    </update>
+</mapper>
